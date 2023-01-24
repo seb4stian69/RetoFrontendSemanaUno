@@ -5,10 +5,10 @@ import { Component } from '@angular/core';
 
 
 @Component({
-  selector: 'app-userhistory',
-  templateUrl: './userhistory.component.html',
-  styleUrls: ['./userhistory.component.scss']
+  selector: 'app-history',
+  templateUrl: './history.component.html',
+  styleUrls: ['./history.component.scss']
 })
-export class UserhistoryComponent {
+export class HistoryComponent {
 
 }

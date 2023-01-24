@@ -1,3 +1,17 @@
-<div class="formcontainet">
+<form class="formcontainer" [formGroup]="formInicial">
 
-</div>
+  <span class="p-input-icon-right" class="p-float-label">
+
+    <input formControlName="user" class="p-inputtext-lg" class="formcontainer_label" id="float-input" type="text" pInputText>
+
+    <span [ngClass]="(isSearchingUser)?'p-input-icon-right':'noDisplay'">
+      <i class="pi pi-spin pi-spinner"></i>
+    </span>
+
+    <label for="float-input">[ 1234 is admin | 5678 is user ]</label>
+
+  </span>
+
+  <p-button (onClick)="onPressLogin()" label="Iniciar sesion"></p-button>
+
+</form>

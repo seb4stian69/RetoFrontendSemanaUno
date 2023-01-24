@@ -1,4 +1,8 @@
+// + ---------------------------- + First level imports + ----------------------------- + //
 import { Component } from '@angular/core';
+// + ---------------------------- + Second level imports + ---------------------------- + //
+// + ---------------------------- + Thirds level imports + ---------------------------- + //
+
 
 @Component({
   selector: 'app-root',
@@ -6,5 +10,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'RetoFrontendSemanaUno';
+  value2:string|undefined;
 }
