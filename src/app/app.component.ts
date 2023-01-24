@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
+  title:string = "Reto frontend semana uno"
   constructor(private router: Router){}
-  ngOnInit():void{this.router.navigate(['/login']);}
+  ngOnInit():void{/*this.router.navigate(['/login']);*/}
 }

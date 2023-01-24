@@ -9,8 +9,8 @@ export const getAllProductsByShopRoute = (shopid:string) => `${environment.apiUr
 export const paginateProductsRoute = (page:number, size:number) => `${environment.apiUrl}Products/get?page=${page}&size=${size}`; // Usado en crud.service
 export const getProductByIdRoute = (shopid:string, productid:string) => `${environment.apiUrl}/products/${shopid}/${productid}`; // Usado en crud.service
 export const createProductRoute = `${environment.apiUrl}/products/create`; // Usado en crud.service
-export const udpdateProductRoute = `${environment.apiUrl}/products/update`; // Usado en crud.service
-export const deleteProductRoute = `${environment.apiUrl}/products/delete`; // Usado en crud.service
+export const udpdateProductRoute = `${environment.apiUrl}/product/update`; // Usado en crud.service
+export const deleteProductRoute = `${environment.apiUrl}/product/delete`; // Usado en crud.service
 
 export const getAllBuysProductRoute = `${environment.apiUrl}/buy/get`; // Usado en crud.service
 export const getAllBuysProductByUserIdRoute = (userid:string) => `${environment.apiUrl}/buy/get/${userid}`; // Usado en userinfo.service

@@ -15,7 +15,7 @@ export class SocketService {
   constructor() {/*void*/}
 
   conection(id: string) {
-    return webSocket(`ws://localhost:8081/retrieve/${id}`);
+    return webSocket(`ws://localhost:8082/retrieve/${id}`);
   }
 
   close(){

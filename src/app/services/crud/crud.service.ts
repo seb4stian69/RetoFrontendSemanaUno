@@ -1,3 +1,4 @@
+import { CreateShopCommand } from './../../common/models/CreateShopCommand.model';
 // + ---------------------------- + First level imports + ----------------------------- + //
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -10,7 +11,6 @@ import { UpdateProductCommand } from './../../common/models/UpdateProductCommand
 import { CreateProductCommand } from './../../common/models/CreateProductCommand.model';
 import { ProductResponse } from './../../common/models/ProductResponse.model';
 import { ProductsResponse } from './../../common/models/ProductsResponse.model';
-import { CreateShopCommand } from '../../common/models/CreateShopCommand.model';
 import { ShopResponse } from './../../common/models/ShopResponse.model';
 import { getShopByIdRoute, createShopRoute, getAllProductsByShopRoute, getProductByIdRoute, paginateProductsRoute, createProductRoute, udpdateProductRoute, deleteProductRoute, getAllBuysProductRoute, buyProductsRoute } from './../../common/utils/Routes.transacts';
 // + ---------------------------- + Thirds level imports + ---------------------------- + //
@@ -29,8 +29,8 @@ export class CrudService {
     return this.http.get<ShopResponse>(getShopByIdRoute(userid));
   }
 
-  createShop(body: CreateShopCommand){
-    return this.http.post(createShopRoute, body);
+  createShop(body: CreateShopCommand):Observable<CreateShopCommand>{
+    return this.http.post<CreateShopCommand>(createShopRoute, body);
   }
 
   // + ------------------------- Product methods ------------------------- + //
@@ -47,16 +47,16 @@ export class CrudService {
     return this.http.get<ProductResponse>(`${getProductByIdRoute(shopid,productid)}`);
   }
 
-  createProduct(body: CreateProductCommand){
-    return this.http.post(createProductRoute, body);
+  createProduct(body: CreateProductCommand): Observable<CreateProductCommand>{
+    return this.http.post<CreateProductCommand>(createProductRoute, body);
   }
 
-  udpdateProduct(body: UpdateProductCommand){
-    return this.http.put(udpdateProductRoute, body);
+  udpdateProduct(body: UpdateProductCommand): Observable<UpdateProductCommand>{
+    return this.http.put<UpdateProductCommand>(udpdateProductRoute, body);
   }
 
-  deleteProduct(body: DeleteProductCommand){
-    return this.http.post(deleteProductRoute, body);
+  deleteProduct(body: DeleteProductCommand): Observable<DeleteProductCommand>{
+    return this.http.post<DeleteProductCommand>(deleteProductRoute, body);
   }
 
   // + ------------------------- Product methods ------------------------- + //
@@ -65,8 +65,8 @@ export class CrudService {
     return this.http.get<BuysResponse>(getAllBuysProductRoute);
   }
 
-  buyProducts(body: BuyProductCommand){
-    return this.http.post(buyProductsRoute, body);
+  buyProducts(body: BuyProductCommand): Observable<BuyProductCommand>{
+    return this.http.post<BuyProductCommand>(buyProductsRoute, body);
   }
 
 }
