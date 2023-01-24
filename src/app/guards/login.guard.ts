@@ -9,10 +9,15 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class LoginGuard implements CanActivate {
-  canActivate(
-    route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    return true;
+
+  canActivate(route:ActivatedRouteSnapshot,state:RouterStateSnapshot):Observable<boolean|UrlTree>|Promise<boolean|UrlTree>|boolean|UrlTree {
+
+    if(sessionStorage.getItem("UserLogged")!==null){
+      return true;
+    }
+
+    return false;
+
   }
 
 }

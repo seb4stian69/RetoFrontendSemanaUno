@@ -15,13 +15,15 @@ import { HistoryComponent } from './pages/history/history.component';
 // + ---------------------------- + Thirds level imports + ---------------------------- + //
 import { ButtonModule } from 'primeng/button';
 import {InputTextModule} from 'primeng/inputtext';
+import { ShopComponent } from './pages/shop/shop.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     CrudComponent,
-    HistoryComponent
+    HistoryComponent,
+    ShopComponent
   ],
   imports: [
     BrowserModule, AppRoutingModule, InputTextModule,

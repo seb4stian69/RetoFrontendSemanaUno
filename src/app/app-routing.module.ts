@@ -1,3 +1,4 @@
+import { ShopComponent } from './modules/userinfo/shop/shop.component';
 // + ---------------------------- + First level imports + ----------------------------- + //
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -28,6 +29,11 @@ const routes: Routes = [
   {
     path:'crudproducts',
     component: CrudComponent,
+    canActivate: [LoginGuard]
+  },
+  {
+    path:'shop',
+    component: ShopComponent,
     canActivate: [LoginGuard]
   },
   {
