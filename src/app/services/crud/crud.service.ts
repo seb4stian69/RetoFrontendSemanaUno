@@ -61,8 +61,8 @@ export class CrudService {
 
   // + ------------------------- Product methods ------------------------- + //
 
-  getAllBuysProduct(): Observable<BuysResponse>{
-    return this.http.get<BuysResponse>(getAllBuysProductRoute);
+  getAllBuysProduct(): Observable<BuysResponse[]>{
+    return this.http.get<BuysResponse[]>(getAllBuysProductRoute);
   }
 
   buyProducts(body: BuyProductCommand): Observable<BuyProductCommand>{

@@ -1,18 +1,35 @@
-<form [formGroup]="formInicial">
+<div class="crud">
 
-  <input formControlName="user" [value]="inputNombre||''" id="inputNombre" placeholder="Nombre" type="text">
-  <input formControlName="user" [value]="inputPrecio||''" id="inputPrecio" placeholder="Precio" type="text">
-  <input formControlName="user" [value]="inputEnInventario||''" id="inputEnInventario" placeholder="En inventario" type="text">
-  <input formControlName="user" [value]="inputDisponible||''" id="inputDisponible" placeholder="Disponible" type="text">
-  <input formControlName="user" [value]="inputMax||''" id="inputMax" placeholder="Max" type="text">
-  <input formControlName="user" [value]="inputMin||''" id="inputMin" placeholder="Min" type="text">
+  <form [formGroup]="formInicial">
 
-  <button id="submitButton" (click)="submmit()">{{(this.isEdited)?"Editar":"Crear nuevo"}}</button>
-  <button *ngIf="isEdited" (click)="cancelEdit()">Cancelar</button>
-  <button (click)="goToHistory()">Historial de compras</button>
+    <input style="display: none;" formControlName="productid" [(ngModel)]="productupdateid" id="inputNombre" placeholder="IdProduct" type="text">
+    <input formControlName="nombre" [(ngModel)]="inputNombre" id="inputNombre" placeholder="Nombre" type="text">
+    <input formControlName="precio" [(ngModel)]="inputPrecio" id="inputPrecio" placeholder="Precio" type="text">
+    <input formControlName="inventario" [(ngModel)]="inputEnInventario" id="inputEnInventario" placeholder="En inventario" type="text">
+    <input formControlName="disponible" [(ngModel)]="inputDisponible" id="inputDisponible" placeholder="Disponible" type="text">
+    <input formControlName="max" [(ngModel)]="inputMax" id="inputMax" placeholder="Max" type="text">
+    <input formControlName="min" [(ngModel)]="inputMin" id="inputMin" placeholder="Min" type="text">
 
-</form>
+    <button id="submitButton" [disabled]="formInicial.invalid" (click)="submmit()">{{(this.isEdited)?"Editar":"Crear nuevo"}}</button>
+    <button *ngIf="isEdited" (click)="cancelEdit()">Cancelar</button>
+    <button (click)="goToHistory()">Historial de compras</button>
+    <button (click)="logout()">Cerrar sesion</button>
 
-<br>
+  </form>
 
-<app-tdcomponent *appReloadcomponent="products" (productIDEmmiter)="deleteProduct($event)" (productEmmiter)="editProduct($event)" [products]="products"></app-tdcomponent>
+  <br>
+
+  <div id="products">
+
+    <div id="productson" *ngFor="let product of products">
+
+      <h2>{{product.name.name}}<span>: {{product.price.quantity}}$</span></h2>
+      <Button (click)="editProduct(product)">Editar</Button> <button (click)="deleteProduct(product.productID.uuid)">Eliminar</button>
+
+    </div>
+
+  </div>
+
+</div>
+
+

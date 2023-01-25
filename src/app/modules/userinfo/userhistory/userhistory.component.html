@@ -1,1 +1,32 @@
-<p>userhistory works!</p>
+<br>
+
+<button (click)="goToShop()">Regresar al crud</button>
+<button (click)="logout()">Salir de la sesion</button>
+
+<br>
+<br>
+<br>
+
+<div class="history">
+
+  <div *ngFor="let compra of comprasView" class="compra">
+
+    <b>Buy details:</b>
+
+    <p>{{compra.shopID}}</p>
+    <p>{{compra.clientName.name}} {{compra.clientName.lastName}}</p>
+    <p>{{compra.idType}}</p>
+    <p>{{compra.idClient}}</p>
+    <p>{{compra.date}}</p>
+
+    <b>Products:</b>
+    <div *ngFor="let buy of compra.productsPurchased">
+      <p>{{buy}}</p>
+    </div>
+
+    <hr>
+
+  </div>
+
+</div>
+

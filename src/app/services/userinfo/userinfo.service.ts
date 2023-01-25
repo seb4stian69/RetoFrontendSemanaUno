@@ -20,8 +20,8 @@ export class UserinfoService {
     return this.http.get<UserResponse>(getUserByIdRoute(userid));
   }
 
-  getUserBuys(userid: string): Observable<BuysResponse>{
-    return this.http.get<BuysResponse>(getAllBuysProductByUserIdRoute(userid));
+  getUserBuys(userid: string): Observable<BuysResponse[]>{
+    return this.http.get<BuysResponse[]>(getAllBuysProductByUserIdRoute(userid));
   }
 
 }

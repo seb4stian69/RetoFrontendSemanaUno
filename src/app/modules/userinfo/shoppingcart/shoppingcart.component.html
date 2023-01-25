@@ -1,1 +1,17 @@
-<p>shoppingcart works!</p>
+
+<br>
+
+<button (click)="goToShop()">Regresar a la tienda</button>
+<button (click)="buyProducts()">Comprar productos</button>
+<button (click)="logout()">Salir de la sesion</button>
+<button (click)="clearCart()">Quitar todo</button>
+
+<br>
+<br>
+
+<div *ngFor="let product of shoppingCart">
+
+  <p>{{product.name}}: {{product.quantity}}</p>
+  <button (click)="deleteObject(product.key)">Quitar objeto</button>
+
+</div>

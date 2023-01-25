@@ -4,7 +4,7 @@ export interface BuysResponse {
   idType:            string;
   idClient:          string;
   clientName:        ClientName;
-  productsPurchased: ProductsPurchased;
+  productsPurchased: any;
 }
 
 export interface ClientName {
@@ -13,6 +13,7 @@ export interface ClientName {
 }
 
 export interface ProductsPurchased {
-  product1: number;
-  product2: number;
+
+  products: Map<string, number>
+
 }

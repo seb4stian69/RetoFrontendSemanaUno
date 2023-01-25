@@ -1,3 +1,4 @@
+import { UserinfoModule } from './modules/userinfo/userinfo.module';
 // + ---------------------------- + First level imports + ----------------------------- + //
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -11,7 +12,6 @@ import { LoginModule } from './modules/login/login.module';
 import { LoginComponent } from './pages/login/login.component';
 import { CrudComponent } from './pages/crud/crud.component';
 import { HistoryComponent } from './pages/history/history.component';
-import { ShopComponent } from './pages/shop/shop.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 // + ---------------------------- + Thirds level imports + ---------------------------- + //
@@ -25,14 +25,13 @@ import { ReloadcomponentDirective } from './directives/reloadcomponent.directive
     LoginComponent,
     CrudComponent,
     HistoryComponent,
-    ShopComponent,
     ReloadcomponentDirective
   ],
   imports: [
     BrowserModule, AppRoutingModule, InputTextModule,
     LoginModule,CommonModule, InputTextModule,
     BrowserAnimationsModule, ButtonModule, FormsModule,
-    HttpClientModule, CrudModule
+    HttpClientModule, CrudModule, UserinfoModule
   ],
   providers: [],
   bootstrap: [AppComponent]

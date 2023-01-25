@@ -10,18 +10,18 @@ import {RouterModule} from '@angular/router';
 import { FormcrudComponent } from './formcrud/formcrud.component';
 import { CrudService } from './../../services/crud/crud.service';
 import { SocketService } from './../../services/socket/socket.service';
-import { TdcomponentComponent } from './tdcomponent/tdcomponent.component';
 // + ---------------------------- + Thirds level imports + ---------------------------- + //
+import {TableModule} from 'primeng/table';
+import {ProgressSpinnerModule} from 'primeng/progressspinner';
 
 @NgModule({
   declarations: [
-    FormcrudComponent,
-    TdcomponentComponent
+    FormcrudComponent
   ],
   imports: [
     BrowserModule, FormsModule, HttpClientModule,
     BrowserAnimationsModule, RouterModule, CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule, TableModule, ProgressSpinnerModule
   ],
   providers: [
     SocketService, CrudService

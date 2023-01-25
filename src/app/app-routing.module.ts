@@ -1,3 +1,6 @@
+import { UserhistoryComponent } from './modules/userinfo/userhistory/userhistory.component';
+import { ShoppingcartComponent } from './modules/userinfo/shoppingcart/shoppingcart.component';
+import { LoginuserGuard } from './guards/loginuser.guard';
 import { ShopComponent } from './modules/userinfo/shop/shop.component';
 // + ---------------------------- + First level imports + ----------------------------- + //
 import { NgModule } from '@angular/core';
@@ -34,7 +37,17 @@ const routes: Routes = [
   {
     path:'shop',
     component: ShopComponent,
-    canActivate: [LoginGuard]
+    canActivate: [LoginuserGuard]
+  },
+  {
+    path:'shop/cart',
+    component: ShoppingcartComponent,
+    canActivate: [LoginuserGuard]
+  },
+  {
+    path:'shop/history',
+    component: UserhistoryComponent,
+    canActivate: [LoginuserGuard]
   },
   {
     path:'history',
