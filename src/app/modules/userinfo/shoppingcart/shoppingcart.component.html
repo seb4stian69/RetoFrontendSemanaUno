@@ -1,17 +1,18 @@
 
-<br>
+<div class="btn">
+  <button class="btn_utils" (click)="goToShop()">Regresar a la tienda</button>
+  <button class="btn_utils" (click)="buyProducts()">Comprar productos</button>
+  <button class="btn_exit" (click)="clearCart()">Quitar todo</button>
+  <button class="btn_exit" (click)="logout()">Salir de la sesion</button>
+</div>
 
-<button (click)="goToShop()">Regresar a la tienda</button>
-<button (click)="buyProducts()">Comprar productos</button>
-<button (click)="logout()">Salir de la sesion</button>
-<button (click)="clearCart()">Quitar todo</button>
+<div id="products">
 
-<br>
-<br>
-
-<div *ngFor="let product of shoppingCart">
-
-  <p>{{product.name}}: {{product.quantity}}</p>
-  <button (click)="deleteObject(product.key)">Quitar objeto</button>
+  <div *ngFor="let product of shoppingCart">
+    <div id="productson">
+      <p>{{product.name}}: {{product.quantity}}</p>
+      <button class="btn_exit" (click)="deleteObject(product.key)">Quitar objeto</button>
+    </div>
+  </div>
 
 </div>
