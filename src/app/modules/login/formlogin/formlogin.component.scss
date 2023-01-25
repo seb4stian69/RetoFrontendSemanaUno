@@ -1,0 +1,27 @@
+.formcontainer{
+
+  background-color: rgb(58, 58, 58);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5em;
+
+  height: 15em;
+  border-radius: 10px;
+
+  margin: 16.8% 25%;
+
+  &_label{
+    width: 25em;
+    padding-right: 10px;
+  }
+
+}
+
+.p-input-icon-right{
+  margin-bottom: 6px;
+}
+
+.noDisplay{display: none}
