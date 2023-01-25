@@ -6,6 +6,7 @@ import { OnInit } from '@angular/core';
 // + ---------------------------- + Second level imports + ---------------------------- + //
 import { CrudService } from './../../../services/crud/crud.service';
 // + ---------------------------- + Thirds level imports + ---------------------------- + //
+import Swal from 'sweetalert2';
 
 interface viewProduct{
   name: string;
@@ -75,7 +76,6 @@ export class ShoppingcartComponent implements OnInit {
 
     let products = this.obtenerProducts(this.productsArray)
 
-
     let body:BuyProductCommand = {
       shopID:this.shopID,
       date: date,
@@ -85,12 +85,17 @@ export class ShoppingcartComponent implements OnInit {
       products: products
     }
 
-    console.log(body);
+    console.log(products);
 
-    this.$service.buyProducts(body).subscribe(()=>{
-      localStorage.removeItem('cart');
-      this.ngOnInit();
-    });
+    if(products == null){
+      Swal.fire({title:"No hay productos", icon:"error"})
+    }else{
+      this.$service.buyProducts(body).subscribe(()=>{
+        localStorage.removeItem('cart');
+        this.ngOnInit();
+      });
+
+    }
 
   }
 
@@ -117,6 +122,8 @@ export class ShoppingcartComponent implements OnInit {
   }
 
   obtenerProducts(products: Array<any>) {
+
+    if(products.length == 0) return null;
 
     return products.reduce(
       (previous, current) => ({

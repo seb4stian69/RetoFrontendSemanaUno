@@ -23,8 +23,8 @@
 
     <div id="productson" *ngFor="let product of products">
 
-      <h2>{{product.name.name}}<span>: {{product.price.quantity}}$</span></h2>
-      <Button (click)="editProduct(product)">Editar</Button> <button (click)="deleteProduct(product.productID.uuid)">Eliminar</button>
+      <b>{{product.name.name}}<span>: {{product.price.quantity}}$</span></b><br><br>
+      <Button id="productson_btn" (click)="editProduct(product)">Editar</Button> <button id="productson_btndel" (click)="deleteProduct(product.productID.uuid)">Eliminar</button>
 
     </div>
 

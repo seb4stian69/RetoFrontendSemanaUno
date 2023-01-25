@@ -1,3 +1,99 @@
 *{
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+@mixin btn{
+  color: white;
+  padding: 1em 2em;
+  border: none;
+  border-radius: 10px;
+}
+.history{
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25%;
+
+  &_buy{
+    border: 1px solid black;
+    padding: 1em 1em;
+    margin-top: 3em;
+  }
+
+}
+
+.btn{
+
+  display: flex;
+  gap: 2em;
+  margin-top: 2.5em;
+  margin-bottom: 1em;
+  justify-items: left;
+  justify-content: flex-end;
+  margin-right: 3em;
+
+  &_utils{
+    background-color: #4691f3;
+    @include btn;
+  }
+  &_utils:hover{
+    background-color: #346fbb;
+  }
+
+  &_exit{
+    background-color: #f35246;
+    @include btn;
+  }&_exit:hover{
+    background-color: #b33e36;
+  }
+
+}
+
+#products{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 5%;
+  justify-content: center;
+}
+
+#productson{
+
+  border: 1px solid black;
+  padding: 1em 1em;
+  margin-top: 3em;
+
+  &_btn{
+    @include btn;
+    background-color: #4691f3;
+    height: 3em;
+    margin: 0 10px;
+  }
+
+  &_btn:hover{
+    background-color: #346fbb;
+  }
+
+  &_btndel{
+    @include btn;
+    background-color: #f35246;
+    height: 3em;
+    margin: 0 10px;
+  }
+
+  &_btndel:hover{
+    background-color: #b33e36;
+  }
+
+}
+
+#productsS{
+  display: flex;
+  flex-direction: row;
+  gap: 25%;
+  justify-content: center;
+}
